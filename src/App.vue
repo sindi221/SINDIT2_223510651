@@ -5,42 +5,67 @@
     </header>
     <main>
       <section class="hero">
-        <h2>Welcome to Our Website!</h2>
-        <p>Explore the amazing features we offer.</p>
+        <h2>"Welcome to My Fragrance Website!"</h2>
+        <p></p>
         <button @click="toggleModal">Learn More</button>
       </section>
       <section class="features">
         <div class="feature">
-          <img src="./assets/feature1.png" alt="Feature 1">
-          <h3>Feature 1</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <img src="./assets/P3-removebg-preview.png" alt="Feature 1" />
+          <h3>
+            ZARA <br />
+            RED VANILLA
+          </h3>
+          <p>
+            Wewangian canggih, hangat, dan rempah dengan aroma nuansa bunga dan rasa manis. Sebuah
+            buket dari bunga iris dan botan merah elegan, dikombinasikan dengan kesegaran aroma
+            jeruk keprok dan sentuhan rasberi yang manis dan lembut, menyatu dengan aroma vanili.
+          </p>
         </div>
+
         <div class="feature">
-          <img src="./assets/feature2.png" alt="Feature 2">
-          <h3>Feature 2</h3>
-          <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <img src="./assets/P4-removebg-preview.png" alt="Feature 2" />
+          <h3>
+            ZARA <br />
+            Night Pour Homme II
+          </h3>
+          <p>
+            Parfum Zara Night Pour Homme II ini memiliki campuran wangi buah bergamot, wangi amber
+            (campuran aroma vanili, bunga dan aroma kayu) dan wangi lavender. Campuran wewangian
+            tersebut menimbulkan rasa segar, nocturnal dan sporty.
+          </p>
         </div>
+
         <div class="feature">
-          <img src="./assets/feature3.png" alt="Feature 3">
-          <h3>Feature 3</h3>
-          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <img src="./assets/P2-removebg-preview (1).png" alt="Feature 3" />
+          <h3>
+            ZARA <br />
+            NUDE BOUQUET
+          </h3>
+          <p>
+            Eau de parfum. Piramida wangi termasuk aroma ceri, peony, dan vanili. Merupakan aroma
+            segar, nyaman, dan bersemangat.
+          </p>
         </div>
       </section>
       <section class="testimonial">
         <blockquote>
-          <p>"This website is amazing! It has everything I need and more."</p>
-          <footer>- Happy Customer</footer>
+          <p>"This perfume website is amazing! It has everything I need and more."</p>
+          <footer>- "Fragrance Enthusiast Hub"</footer>
         </blockquote>
       </section>
     </main>
     <footer>
-      <p>&copy; 2024 Our Website. Zakia Aulia Putra.</p>
+      <p>&copy; 2024 Our Website. SINDI MAHARANI.</p>
     </footer>
     <div class="modal" v-if="showModal">
       <div class="modal-content">
         <span class="close" @click="toggleModal">&times;</span>
         <h2>About Us</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua.
+        </p>
       </div>
     </div>
   </div>
@@ -50,32 +75,32 @@
 export default {
   data() {
     return {
-      pageTitle: "Welcome to Our Website!",
+      pageTitle: 'Welcome to Our Website!',
       showModal: false,
       isHighlighted: false,
-      inputText: "",
-      boxColor: "lightblue",
-      boxContent: "Hover me to change color!",
-      listItems: ["Item 1", "Item 2", "Item 3"]
-    };
+      inputText: '',
+      boxColor: 'lightblue',
+      boxContent: 'Hover me to change color!',
+      listItems: ['Item 1', 'Item 2', 'Item 3']
+    }
   },
   methods: {
     toggleModal() {
-      this.showModal = !this.showModal;
+      this.showModal = !this.showModal
     },
     updateText(event) {
-      this.inputText = event.target.value;
+      this.inputText = event.target.value
     },
     toggleHighlight() {
-      this.isHighlighted = !this.isHighlighted;
+      this.isHighlighted = !this.isHighlighted
     },
     changeColor() {
-      const colors = ["lightblue", "lightgreen", "lightcoral", "lightsalmon"];
-      const randomIndex = Math.floor(Math.random() * colors.length);
-      this.boxColor = colors[randomIndex];
+      const colors = ['lightblue', 'lightgreen', 'lightcoral', 'lightsalmon']
+      const randomIndex = Math.floor(Math.random() * colors.length)
+      this.boxColor = colors[randomIndex]
     }
   }
-};
+}
 </script>
 
 <style scoped>
@@ -129,10 +154,11 @@ main {
 
 .feature {
   text-align: center;
+  flex: 1;
 }
 
 .feature img {
-  max-width: 200px;
+  max-width: 150px;
 }
 
 .feature h3 {
