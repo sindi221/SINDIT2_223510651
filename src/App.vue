@@ -5,12 +5,15 @@
     </header>
     <main>
       <section class="hero">
-        <h2>"Sinduy Parfum"</h2>
-        <p>"Welcome to our Fragrance Website!</p>
-        <h3>FIND YOUR FAVORITE PARFUME ON YOUR FRAGRANCE</h3>
-      </section>
-      <section class="features">
-        <div class="feature">
+      <h2> 
+"Discover the dream car that fits your style and needs."</h2>
+      <input v-model="text" placeholder="Type here">
+      <p>{{ text }}</p>
+    </section>
+
+    <section class="features">
+        <div class="feature" :class="{ highlighted: isHighlighted }" @click="toggleHighlight">
+
           <img src="./assets/P3-removebg-preview.png" alt="Feature 1" />
           <h3>
             ZARA <br />
@@ -56,48 +59,35 @@
       </section>
     </main>
     <footer>
-      <p>&copy; 2024 Our Website. SINDI MAHARANI.</p>
+      <p>&copy; 2024 Our Website.SINDI MAHARANI .</p>
     </footer>
-    <div class="modal" v-if="showModal">
-      <div class="modal-content">
+    <div class="modal" v-if="showModal" @click="toggleModal">
+      <div class="modal-content" @click.stop>
         <span class="close" @click="toggleModal">&times;</span>
         <h2>About Us</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua.
-        </p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { ref } from 'vue'
+
 export default {
   data() {
     return {
       pageTitle: 'Welcome to Our Website!',
       showModal: false,
       isHighlighted: false,
-      inputText: '',
-      boxColor: 'lightblue',
-      boxContent: 'Hover me to change color!',
-      listItems: ['Item 1', 'Item 2', 'Item 3']
+      text: ''
     }
   },
   methods: {
     toggleModal() {
       this.showModal = !this.showModal
     },
-    updateText(event) {
-      this.inputText = event.target.value
-    },
     toggleHighlight() {
       this.isHighlighted = !this.isHighlighted
-    },
-    changeColor() {
-      const colors = ['lightblue', 'lightgreen', 'lightcoral', 'lightsalmon']
-      const randomIndex = Math.floor(Math.random() * colors.length)
-      this.boxColor = colors[randomIndex]
     }
   }
 }
@@ -136,16 +126,6 @@ main {
   margin-bottom: 30px;
 }
 
-.hero button {
-  padding: 10px 20px;
-  font-size: 1.2rem;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
 .features {
   display: flex;
   justify-content: space-around;
@@ -158,7 +138,7 @@ main {
 }
 
 .feature img {
-  max-width: 150px;
+  max-width: 600px;
 }
 
 .feature h3 {
@@ -218,5 +198,9 @@ footer {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+.highlighted {
+  background-color: yellow;
 }
 </style>
